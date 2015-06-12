@@ -1,10 +1,9 @@
 # Simple-Console
 Simple console window allowing you to do various commands, with lots more to be added.
-Required [AutoHotkey](http://www.autohotkey.com/) be installed, then simply run the console.ahk script.
+Requires [AutoHotkey](http://www.autohotkey.com/) to be installed, then simply run the console.ahk file.
 
-Shortcut key currently set to **F1**
+Shortcut key currently set to **F1**. Type in a command and push enter.
 
-###Features
 ##### General
 | command       | |
 | ------------- |:-------------:|
