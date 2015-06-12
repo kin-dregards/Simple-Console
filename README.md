@@ -1,6 +1,6 @@
 # Simple-Console
 Simple console window allowing you to do various commands, with lots more to be added.
-Must have [AutoHotkey](http://www.autohotkey.com/) installed, then simply run the console.ahk script.
+Required [AutoHotkey](http://www.autohotkey.com/) be installed, then simply run the console.ahk script.
 
 Shortcut key currently set to **F1**
 
@@ -48,4 +48,4 @@ Shortcut key currently set to **F1**
 | **reboot** | Reboots computer |
 | **logoff** | Logs off |
 
-No credit taken for coding of the features, as it's bits and pieces put together.
+No credit taken for the coding of the features, as it's bits and pieces put together.
