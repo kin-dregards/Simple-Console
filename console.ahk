@@ -327,7 +327,7 @@ ok:
 
 		If input = help
 			{
-				Reload
+				Run, https://github.com/kin-dregards/Simple-Console
 			}
 		
 		If input = .r
