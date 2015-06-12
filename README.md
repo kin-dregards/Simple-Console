@@ -46,4 +46,4 @@ Shortcut key currently set to **F1**
 | **reboot** | Reboots computer |
 | **logoff** | Logs off |
 
-No credit taken for coding of the tools and things, as it's bits and pieces from other people's stuff all put together.
+No credit taken for coding of all the features, as it's bits and pieces put together.
