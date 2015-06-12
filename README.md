@@ -10,6 +10,8 @@ Shortcut key currently set to **F1**
 | ------------- |:-------------:|
 | **run** {input}	     | Runs program/directory |
 | **note** {input}		| Appends a new line in notes.txt with a note you write |
+| 1+3	     | It's a calculator! Type in a calculation and press enter |
+
 
 ##### Search Engines
 | command       | |
@@ -46,4 +48,4 @@ Shortcut key currently set to **F1**
 | **reboot** | Reboots computer |
 | **logoff** | Logs off |
 
-No credit taken for coding of all the features, as it's bits and pieces put together.
+No credit taken for coding of the features, as it's bits and pieces put together.
