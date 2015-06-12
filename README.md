@@ -5,32 +5,45 @@ Must have [AutoHotkey](http://www.autohotkey.com/) installed, then simply run th
 Shortcut key currently set to **F1**
 
 ###Features
-* *run** {input}
-* **note** {input}
+##### General
+| command       | |
+| ------------- |:-------------:|
+| **run** {input}	     | Runs program/directory |
+| **note** {input}		| Appends a new line in notes.txt with a note you write |
 
-* **g** {input}
-* **yt** {input}
-* **imdb** {input}
-* **wa** {input}
-* **map** {input}
-* **d** {word}
-* **th** {word}
-* **ud** {word}
+##### Search Engines
+| command       | |
+| ------------- |:-------------:|
+| **g** {input} | Searches Google |
+| **yt** {input} | Searches Youtube |
+| **imdb** {input} | Searches IMDB |
+| **wa** {input} | Searches Wolfram Alpha |
+| **map** {input} | Searches Google Maps |
+| **d** {word} | Searches Dictionary |
+| **th** {word} | Searches Thesaurus |
+| **ud** {word} | Searches Urband Dictionary |
 
-* **remind**
-* **stopwatch**
+##### Tools
+| command       | |
+| ------------- |:-------------:|
+| **remind** | Launches Reminder Tool, to set an alarm |
+| **stopwatch** | Launches StopWatch Tool |
 
-* **whois**
-* **ping**
+##### Web
+| command       | |
+| ------------- |:-------------:|
+| **whois** {url} | Opens site with a whois on the url specified |
+| **ping** {url/ip} | Pings the url/ip specified with messagebox of result |
 
-* **documents**
-* **pictures**
-* **music**
-* **videos**
+##### System
+| command       | |
+| ------------- |:-------------:|
+| **documents/pictures/music/videos** | Quick open library folder |
+| **volume** {0-100} | Sets windows volume percentage |
+| **audio** {optional #} | Launches/changes audio device (depending on number specified)
+| **kill** {window} | Kills program with title containing input |
+| **shutdown** | Shuts down computer |
+| **reboot** | Reboots computer |
+| **logoff** | Logs off |
 
-* **volume**
-* **audio**
-* **kill**
-* **shutdown**
-* **reboot**
-* **logoff**
+No credit taken for coding of the tools and things, as it's bits and pieces from other people's stuff all put together.
