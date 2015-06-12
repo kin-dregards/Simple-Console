@@ -6,7 +6,7 @@ Shortcut key currently set to **F1**. Type in a command and push enter.
 
 ##### General
 | command       | |
-| ------------- |:-------------:|
+| ------------- |:-------------|
 | **run** {input}	     | Runs program/directory |
 | **note** {input}		| Appends a new line in notes.txt with a note you write |
 | 1+3	     | It's a calculator! Type in a calculation and press enter |
@@ -14,7 +14,7 @@ Shortcut key currently set to **F1**. Type in a command and push enter.
 
 ##### Search Engines
 | command       | |
-| ------------- |:-------------:|
+| ------------- |:-------------|
 | **g** {input} | Searches Google |
 | **yt** {input} | Searches Youtube |
 | **imdb** {input} | Searches IMDB |
@@ -26,19 +26,19 @@ Shortcut key currently set to **F1**. Type in a command and push enter.
 
 ##### Tools
 | command       | |
-| ------------- |:-------------:|
+| ------------- |:-------------|
 | **remind** | Launches Reminder Tool, to set an alarm |
 | **stopwatch** | Launches StopWatch Tool |
 
 ##### Web
 | command       | |
-| ------------- |:-------------:|
+| ------------- |:-------------|
 | **whois** {url} | Opens site with a whois on the url specified |
 | **ping** {url/ip} | Pings the url/ip specified with messagebox of result |
 
 ##### System
 | command       | |
-| ------------- |:-------------:|
+| ------------- |:-------------|
 | **documents/pictures/music/videos** | Quick open library folder |
 | **volume** {0-100} | Sets windows volume percentage |
 | **audio** {optional #} | Launches/changes audio device (depending on number specified)
