@@ -105,6 +105,12 @@ ok:
 				run %s%
 			}
 
+		If word_array1 in dl,download
+			{
+
+				run, Autohotkey.exe scripts\download.ahk %word_array2%
+			}
+
 		If word_array1 = remind
 			{
 				Run , scripts\reminder.ahk

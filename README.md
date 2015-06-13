@@ -9,6 +9,7 @@ Shortcut key currently set to **F1**. Type in a command and push enter.
 | ------------- |:-------------|
 | **run** {input}	     | Runs program/directory |
 | **note** {input}		| Appends a new line in notes.txt with a note you write |
+| **dl/download** {link} | Downloads file from link |
 | 1+3	     | It's a calculator! Type in a calculation and press enter |
 
 
