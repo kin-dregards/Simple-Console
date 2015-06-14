@@ -45,6 +45,7 @@ DownloadFile(UrlToFile, _SaveFileAs, Overwrite := True, UseProgressBar := True) 
             WebRequest := ComObjCreate("WinHttp.WinHttpRequest.5.1")
           ;Download the headers
             WebRequest.Open("HEAD", UrlToFile)
+            OnError Goto, ErrorCatch
             WebRequest.Send()
           ;Store the header which holds the file size in a variable:
             FinalSize := WebRequest.GetResponseHeader("Content-Length")
@@ -74,4 +75,8 @@ UpdateProgressBar:
     ;Update the ProgressBar
       Progress, %PercentDone%, %PercentDone%`% Done, Downloading...  (%Speed%), Downloading %SaveFileAs% (%PercentDone%`%)
 Return
+
+ErrorCatch:
+   MsgBox, 16, Gulp, A fatal error occured during execution: %ErrorLevel% at line %A_ErrorLine%
+   ExitApp
 ;=================== end script =====================================================================

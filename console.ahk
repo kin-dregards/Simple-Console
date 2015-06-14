@@ -34,7 +34,9 @@ return
 #IfWinActive, Console
 Up::
 	 {
+
 	 	if cline = -1
+
 		 	{	
 		 		clipstore:=clipboard ;Store whatever is on the clipboard
 				FileReadLine, line, tmp\templist.tmp, %numlines%
@@ -75,10 +77,9 @@ Down::
 
 ok:
  	{
-		gui, submit
-
-		StringSplit, word_array, input, %A_Space%, %A_Space%%A_Tab%
-		StringLen, length, input
+	gui, submit
+	StringSplit, word_array, input, %A_Space%, %A_Space%%A_Tab%
+	StringLen, length, input
 
 		If length > 0
 			{
@@ -100,15 +101,26 @@ ok:
 			}
 
 		If word_array1 = run
+			If word_array2 !=
 			{
-				StringTrimLeft, s, input, 4
+				StringGetPos, input2, input, %word_array2%
+				StringTrimLeft, s, input, %input2%
 				run %s%
 			}
 
 		If word_array1 in dl,download
+			If word_array2 !=
 			{
-
-				run, Autohotkey.exe scripts\download.ahk %word_array2%
+				StringGetPos, input2, input, %word_array2%
+				StringTrimLeft, s, input, %input2%
+				if word_array2 contains http://
+					{
+						run, Autohotkey.exe scripts\download.ahk %s%
+					}
+					else
+					{
+						run Autohotkey.exe scripts\download.ahk http://%s%
+					}
 			}
 
 		If word_array1 = remind
@@ -116,15 +128,24 @@ ok:
 				Run , scripts\reminder.ahk
 			}
 
-		If word_array1 = g
+		If input = notes
 			{
-				StringTrimLeft, s, input, 2
+				Run , notes.txt
+			}
+
+		If word_array1 = g
+			If word_array2 !=
+			{
+				StringGetPos, input2, input, %word_array2%
+				StringTrimLeft, s, input, %input2%
 				Run , https://www.google.co.nz/search?q=%s%
 			}
 
 		If word_array1 = yt
+			If word_array2 !=
 			{
-				StringTrimLeft, s, input, 2
+				StringGetPos, input2, input, %word_array2%
+				StringTrimLeft, s, input, %input2%
 				Run , https://www.youtube.com/results?search_query=%s%
 			}
 
@@ -135,33 +156,62 @@ ok:
 			}
 
 		If word_array1 = wa
+			If word_array2 !=
 			{
-				StringTrimLeft, s, input, 3
+				StringGetPos, input2, input, %word_array2%
+				StringTrimLeft, s, input, %input2%
 				Run , https://www.wolframalpha.com/input/?i=%s%
 			}
 
 		If word_array1 = map
+			If word_array2 !=
 			{
-				StringTrimLeft, s, input, 4
+				StringGetPos, input2, input, %word_array2%
+				StringTrimLeft, s, input, %input2%
 				Run , https://www.google.co.nz/maps?q=%s%
 			}
 
 		If word_array1 = d
+			If word_array2 !=
 			{
-				StringTrimLeft, s, input, 2
+				StringGetPos, input2, input, %word_array2%
+				StringTrimLeft, s, input, %input2%
 				Run , http://dictionary.reference.com/browse?q=%s%
 			}
 
 		If word_array1 = th
+			If word_array2 !=
 			{
-				StringTrimLeft, s, input, 2
+				StringGetPos, input2, input, %word_array2%
+				StringTrimLeft, s, input, %input2%
 				Run , http://thesaurus.reference.com/browse?q=%s%
 			}
 
 		If word_array1 = ud
+			If word_array2 !=
 			{
-				StringTrimLeft, s, input, 2
+				StringGetPos, input2, input, %word_array2%
+				StringTrimLeft, s, input, %input2%
 				Run , http://www.urbandictionary.com/define.php?term=%s%
+			}
+
+		If word_array1 = msg
+			If word_array2 !=
+			If word_array2 = ?
+			{
+				cFile:=a_temp "\comp_list.txt", cList:=""
+				runwait %comspec% /c ""net.exe" "view" >"%cFile%"",, hide
+				loop, read, % cFile
+				  cList .= ( inStr( a_loopReadLine, "\\" ) ? subStr( a_loopReadLine, 3 ) "`n" : )
+				fileDelete % cFile
+				msgbox % "Computer Names:`n`n" cList
+			}
+			else
+			if word_array3 != ""
+			{	
+				StringGetPos, msgpos, input, %word_array3%
+				StringTrimLeft, msg, input, %msgpos%
+				run, %comspec% /k msg /Server:%word_array2% * /time:0 %msg%, , Hide
 			}
 
 		If input not contains a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z
@@ -200,15 +250,18 @@ ok:
 			}
 
 		If word_array1 = whois
+		If word_array2 !=
 			{
-				StringTrimLeft, s, input, 6
+				StringGetPos, input2, input, %word_array2%
+				StringTrimLeft, s, input, %input2%
 				Run, http://www.networksolutions.com/whois/registry-data.jsp?domain=%s%
-
 			}
 
 		If word_array1 = ping
+		If word_array2 !=
 			{
-				StringTrimLeft, ping1, input, 5
+				StringGetPos, input2, input, %word_array2%
+				StringTrimLeft, s, input, %input2%
 				SimplePing(URL, byref speed, timeout = 1000)
 					{
 						Runwait,%comspec% /c ping -w %timeout% %url%>ping.log,,hide 
@@ -220,15 +273,16 @@ ok:
 						else
 						speed := "No response."
 					}
-
-					SimplePing(ping1, result)
-
-				msgbox, , Ping, Ping to %ping1%: %result%
+				SimplePing(s, result)
+				msgbox, , Ping, Ping to %s%: %result%
 			}
 		
 		If word_array1 = volume
+		If word_array2 !=
 			{
-				SoundSet, %word_array2%
+				StringGetPos, input2, input, %word_array2%
+				StringTrimLeft, s, input, %input2%
+				SoundSet, %s%
 			}
 
 		If word_array1 = audio
@@ -240,7 +294,7 @@ ok:
 					}
 				else
 					{
-						Run, mmsys.cpl 
+						Run, mmsys.cpl
 						WinWait,Sound ; Change "Sound" to the name of the window in your local language
 						Loop, %word_array2%
 						    {
@@ -253,10 +307,11 @@ ok:
 					}
 			}
 
-
-
 		If word_array1 = kill
+		If word_array2 !=
 			{
+				StringGetPos, input2, input, %word_array2%
+				StringTrimLeft, s, input, %input2%
 				SetTitleMatchMode RegEx
 				StringTrimLeft, s, input, 5
 				IfWinExist, i)%s%
@@ -341,6 +396,9 @@ ok:
 				Reload
 			}
 
+		input=
+		word_array1=
+		word_array2=
 	}
 return
 
