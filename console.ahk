@@ -307,19 +307,6 @@ ok:
 					}
 			}
 
-		If word_array1 = kill
-		If word_array2 !=
-			{
-				StringGetPos, input2, input, %word_array2%
-				StringTrimLeft, s, input, %input2%
-				SetTitleMatchMode RegEx
-				StringTrimLeft, s, input, 5
-				IfWinExist, i)%s%
-				WinClose
-				else
-				return
-			}
-
 		If input = pictures
 			{
 				EnvGet, UserProfile, UserProfile
@@ -347,6 +334,36 @@ ok:
 				run, %UserProfile%\AppData\Roaming\Microsoft\Windows\Libraries\Videos.library-ms
 			}
 
+		If word_array1 = kill
+			If word_array2 !=
+			{
+				StringGetPos, input2, input, %word_array2%
+				StringTrimLeft, s, input, %input2%
+				SetTitleMatchMode RegEx
+				StringTrimLeft, s, input, 5
+				IfWinExist, i)%s%
+				WinClose
+				else
+				return
+			}
+
+		If word_array1 = killp
+			If word_array2 !=
+			{
+				StringGetPos, input2, input, %word_array2%
+				StringTrimLeft, s, input, %input2%
+				SetTitleMatchMode RegEx
+				IfWinExist, i)%s%
+					{
+						WinGet, pname, ProcessName
+						Process, Close, %pname%
+					}
+				else
+					{
+						return
+					}
+			}
+
 		If input = shutdown
 			{
 				Shutdown, 6
@@ -367,7 +384,7 @@ ok:
 				DllCall("PowrProf\SetSuspendState", "int", 0, "int", 0, "int", 0)
 			}
 
-			If word_array1 = bind
+		If word_array1 = bind
 			{
 				StringTrimLeft, s, input, 5
 				FileAppend, %s%`n, commands.txt

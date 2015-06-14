@@ -24,7 +24,7 @@ Shortcut key currently set to **F1**. Type in a command and push enter.
 | **map** {input} | Searches Google Maps |
 | **d** {word} | Searches Dictionary |
 | **th** {word} | Searches Thesaurus |
-| **ud** {word} | Searches Urband Dictionary |
+| **ud** {word} | Searches Urban Dictionary |
 
 ##### Tools
 | command       | |
@@ -44,7 +44,8 @@ Shortcut key currently set to **F1**. Type in a command and push enter.
 | **documents/pictures/music/videos** | Quick open library folder |
 | **volume** {0-100} | Sets windows volume percentage |
 | **audio** {optional #} | Launches/changes audio device (depending on number specified)
-| **kill** {window} | Kills program with title containing input |
+| **kill** {blah} | Closes program with title containing {blah} |
+| **killp** {blah} | Closes the process of window with title containing {blah} |
 | **shutdown** | Shuts down computer |
 | **reboot** | Reboots computer |
 | **logoff** | Logs off |
