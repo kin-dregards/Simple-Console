@@ -211,6 +211,13 @@ ok:
 				Run , http://www.urbandictionary.com/define.php?term=%s%
 			}
 
+		If word_array1 = randomporn
+			{
+				Run , http://www.pornhub.com/random
+			}
+
+
+
 		If word_array1 = msg
 			If word_array2 !=
 			If word_array2 = ?
