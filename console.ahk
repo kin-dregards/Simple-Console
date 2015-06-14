@@ -62,6 +62,14 @@ Up::
 	 }
 
 #IfWinActive, Console
+Escape::
+			{
+			Gui, Destroy
+			WinClose
+			return
+			}
+
+#IfWinActive, Console
 Down::
 	 {
 		numlines +=1
@@ -139,6 +147,14 @@ ok:
 				StringGetPos, input2, input, %word_array2%
 				StringTrimLeft, s, input, %input2%
 				Run , https://www.google.co.nz/search?q=%s%
+			}
+
+		If word_array1 = gi
+			If word_array2 !=
+			{
+				StringGetPos, input2, input, %word_array2%
+				StringTrimLeft, s, input, %input2%
+				Run , https://www.google.co.nz/search?q=%s%&tbm=isch
 			}
 
 		If word_array1 = yt
@@ -366,17 +382,17 @@ ok:
 
 		If input = shutdown
 			{
-				Shutdown, 6
+				Shutdown, 5
 			}
 
 		If input = reboot
 			{
-				Shutdown, 8
+				Shutdown, 6
 			}
 
 		If input = logoff
 			{
-				Shutdown, 4
+				Shutdown, 0
 			}
 
 		If input = hibernate

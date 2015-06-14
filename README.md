@@ -18,6 +18,7 @@ Shortcut key currently set to **F1**. Type in a command and push enter.
 | command       | |
 | ------------- |:-------------|
 | **g** {input} | Searches Google |
+| **gi** {input} | Searches Google Image Search |
 | **yt** {input} | Searches Youtube |
 | **imdb** {input} | Searches IMDB |
 | **wa** {input} | Searches Wolfram Alpha |
